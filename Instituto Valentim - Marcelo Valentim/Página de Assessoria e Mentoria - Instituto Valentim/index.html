@@ -266,6 +266,35 @@
 @media(max-width:800px){header.wrap{height:auto;min-height:84px;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;padding-top:12px;padding-bottom:12px}.section-nav{order:3;width:100%;margin:0;justify-content:center;gap:clamp(18px,6vw,44px)}.top-link{margin-left:auto}}
 @media(max-width:480px){header.wrap{min-height:72px}.section-nav{gap:clamp(14px,5vw,28px)}.section-nav a{font-size:11px}.bottom-actions{flex-direction:column;align-items:stretch}.bottom-actions .btn{width:100%}}
 </style>
+
+<style id="botoes-site-interacao-final-mobile">
+/* Botões de contato com a mesma identidade visual do site principal. */
+.bottom-actions{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;position:relative}
+.bottom-actions .button{min-height:48px;padding:14px 20px;border-radius:99px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font:700 12px/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;transition:transform .2s,filter .2s,box-shadow .2s}
+.bottom-actions .button:hover,.bottom-actions .button:focus-visible{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 9px 24px #0003;outline:2px solid #fff;outline-offset:3px}
+.bottom-actions .button.whatsapp{background:#25d366;color:#092e20}
+.bottom-actions .button.instagram{background:var(--pink);color:#fff}
+.bottom-actions .button svg{width:19px;height:19px;flex:0 0 19px;fill:currentColor}
+.bottom-actions .button.instagram svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bottom-actions .button.instagram .instagram-dot{fill:currentColor;stroke:none}
+.bottom-experience{display:flex;align-items:center;justify-content:center;gap:clamp(26px,6vw,76px);max-width:880px;margin:30px auto 0;text-align:left;position:relative;z-index:1}
+.bottom-content{min-width:0}.bottom .bottom-content>p.music-orbit-hint{margin:0 auto 18px;text-align:left;font-size:13px;color:#d4dced}
+.music-orbit{appearance:none;border:0;background:transparent;color:var(--yellow);position:relative;display:grid;place-items:center;width:146px;height:146px;flex:0 0 146px;cursor:pointer;border-radius:50%;transition:transform .35s ease}
+.music-orbit:hover,.music-orbit:focus-visible{transform:scale(1.05);outline:2px solid #fff;outline-offset:5px}
+.orbit-ring{position:absolute;border:1px solid #ffd40070;border-radius:50%;inset:8px;transition:transform .5s ease,border-color .4s ease}
+.orbit-ring-one{transform:rotate(-22deg) scaleX(.72)}.orbit-ring-two{inset:20px;transform:rotate(35deg) scaleX(.72);border-color:#d500877a}
+.orbit-core{display:grid;place-items:center;width:66px;height:66px;border-radius:50%;background:#ffffff12;border:1px solid #ffffff55;font:42px/1 var(--serif);box-shadow:0 0 30px #ffd4002b;transition:background .35s,box-shadow .35s}
+.orbit-note{position:absolute;font:26px/1 var(--serif);opacity:.85;transition:transform .45s ease,color .35s}
+.note-a{top:1px;left:58px}.note-b{right:1px;top:62px;color:#ff71c9}.note-c{bottom:1px;left:59px;color:#78e4ea}
+.music-orbit.is-playing .orbit-ring-one{transform:rotate(26deg) scaleX(.72);border-color:#78e4ea}.music-orbit.is-playing .orbit-ring-two{transform:rotate(-24deg) scaleX(.72);border-color:#ffd400}
+.music-orbit.is-playing .orbit-core{background:#ffd40020;box-shadow:0 0 38px #ffd40080}
+.music-orbit.is-playing .note-a{transform:translate(-9px,-7px) rotate(-12deg)}.music-orbit.is-playing .note-b{transform:translate(8px,-4px) rotate(12deg)}.music-orbit.is-playing .note-c{transform:translate(-5px,8px) rotate(-8deg)}
+@media(max-width:800px){header.wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:12px;row-gap:7px;min-height:0;padding-top:12px;padding-bottom:10px}.brand{grid-column:1;grid-row:1;min-width:0}.top-link{grid-column:2;grid-row:1;justify-self:end;margin:0;padding:8px 0;font-size:12px;white-space:nowrap}.section-nav{grid-column:1/-1;grid-row:2;width:100%;margin:0;justify-content:center;gap:clamp(14px,5vw,38px)}.section-nav a{font-size:12px}.bottom-experience{gap:26px}}
+@media(max-width:520px){.bottom-experience{flex-direction:column;gap:14px;margin-top:20px;text-align:center}.music-orbit{width:112px;height:112px;flex-basis:112px}.orbit-core{width:54px;height:54px;font-size:35px}.orbit-ring{inset:5px}.orbit-ring-two{inset:15px}.note-a{left:43px}.note-b{top:46px}.note-c{left:44px}.bottom .bottom-content>p.music-orbit-hint{text-align:center;margin-bottom:15px;font-size:12px}.bottom-actions{flex-direction:column;align-items:stretch;gap:10px}.bottom-actions .button{width:100%;min-height:46px}.top-link{font-size:11px}.section-nav{gap:clamp(12px,4vw,22px)}.section-nav a{font-size:10.5px}}
+@media(max-width:360px){.brand{font-size:16px}.brand-logo{width:42px;height:42px}.top-link{font-size:10px}.section-nav{gap:10px}.section-nav a{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.music-orbit,.orbit-ring,.orbit-core,.orbit-note,.bottom-actions .button{transition:none}}
+</style>
+
 </head>
 <body>
 <div class="top">
@@ -419,7 +448,7 @@ for(const name of [...new Set(cards.map(c=>c.dataset.artist))])photo(name).then(
 </div>
 </section>
 <section class="how"><div class="wrap how-grid"><div><span class="eyebrow" style="color:var(--pink)">Como funciona</span><h2>Um plano que faz sentido para você.</h2><p class="how-intro">A mentoria não é uma fórmula pronta. É um espaço para entender seu cenário, definir prioridades e construir um caminho possível — com acompanhamento personalizado.</p></div><div class="steps"><div class="step"><span class="step-no">01</span><div><h3>Conte o que você busca</h3><p>Fale sobre seu instrumento, sua experiência, suas dúvidas ou as dificuldades que está enfrentando.</p></div></div><div class="step"><span class="step-no">02</span><div><h3>Mapeamos seu momento</h3><p>Conversamos sobre seus objetivos, rotina, interesses e o que pode estar impedindo seu avanço.</p></div></div><div class="step"><span class="step-no">03</span><div><h3>Definimos próximos passos</h3><p>Você recebe orientação e prioridades práticas, alinhadas ao seu objetivo e ao seu ritmo.</p></div></div></div></div></section>
-<section class="bottom"><div class="wrap"><span class="eyebrow">A música continua — do seu jeito</span><h2>Vamos descobrir qual é o próximo passo?</h2><p>Converse com o Instituto Valentim e conte um pouco sobre seu momento musical. A primeira conversa ajuda a entender qual tipo de orientação combina com você.</p><div class="bottom-actions"><a class="btn btn-primary" href="https://wa.me/5511966899665?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20assessoria%20ou%20mentoria%20musical." rel="noopener" target="_blank">Chamar no WhatsApp <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="https://www.instagram.com/institutovalentimensinomusical/" rel="noopener noreferrer" target="_blank">Instagram <span aria-hidden="true">↗</span></a></div></div></section>
+<section class="bottom"><div class="wrap"><span class="eyebrow">A música continua — do seu jeito</span><h2>Vamos descobrir qual é o próximo passo?</h2><p>Converse com o Instituto Valentim e conte um pouco sobre seu momento musical. A primeira conversa ajuda a entender qual tipo de orientação combina com você.</p><div class="bottom-experience"><button class="music-orbit" type="button" aria-pressed="false" aria-label="Toque para ativar a ilustração musical"><span class="orbit-ring orbit-ring-one" aria-hidden="true"></span><span class="orbit-ring orbit-ring-two" aria-hidden="true"></span><span class="orbit-note note-a" aria-hidden="true">♪</span><span class="orbit-note note-b" aria-hidden="true">♫</span><span class="orbit-note note-c" aria-hidden="true">♬</span><span class="orbit-core" aria-hidden="true">♪</span></button><div class="bottom-content"><p class="music-orbit-hint" aria-live="polite">Toque na ilustração e deixe a música entrar na conversa.</p><div class="bottom-actions"><a class="button whatsapp" href="https://wa.me/5511966899665?text=Ol%C3%A1%21%20Gostaria%20de%20conversar%20sobre%20assessoria%20ou%20mentoria%20musical." rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.05 24l6.27-1.65a11.9 11.9 0 0 0 5.76 1.47h.01c6.58 0 11.93-5.35 11.93-11.93c0-3.19-1.24-6.19-3.5-8.41ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.72.98.99-3.63-.24-.37a9.87 9.87 0 0 1-1.52-5.26c0-5.47 4.45-9.92 9.92-9.92c2.65 0 5.14 1.03 7.01 2.91a9.87 9.87 0 0 1 2.9 7.02c0 5.47-4.45 9.92-9.93 9.92Zm5.44-7.43c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.1-.17.2-.37.22-.67.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>WhatsApp <span aria-hidden="true">↗</span></a><a class="button instagram" href="https://www.instagram.com/institutovalentimensinomusical/" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" class="instagram-dot"/></svg>Instagram <span aria-hidden="true">↗</span></a></div></div></div></div></section>
 <footer class="foot"><strong>Instituto <b style="color:#f2c94c">Valentim</b> de Ensino Musical</strong><span class="foot-location">Aulas individuais de música · Santo André e online</span><span>© 2026 Instituto Valentim</span></footer><a class="whatsapp-float" href="https://wa.me/5511966899665?text=Ol%C3%A1%2C%20Marcelo!%20Quero%20saber%20mais%20sobre%20a%20assessoria%20musical." target="_blank" rel="noopener noreferrer" aria-label="Fale com Marcelo pelo WhatsApp" title="Fale pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.05 24l6.27-1.65a11.9 11.9 0 0 0 5.76 1.47h.01c6.58 0 11.93-5.35 11.93-11.93c0-3.19-1.24-6.19-3.5-8.41ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.72.98.99-3.63-.24-.37a9.87 9.87 0 0 1-1.52-5.26c0-5.47 4.45-9.92 9.92-9.92c2.65 0 5.14 1.03 7.01 2.91a9.87 9.87 0 0 1 2.9 7.02c0 5.47-4.45 9.92-9.93 9.92Zm5.44-7.43c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.1-.17.2-.37.22-.67.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.49c0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg></a>
 
 <script>
@@ -436,5 +465,16 @@ document.addEventListener('click', function(event) {
   card.querySelector('.instrument-back').setAttribute('aria-hidden', String(!flipped));
 });
 </script>
+<script id="interacao-musical-secao-final">
+document.addEventListener('click',function(event){
+ const control=event.target.closest('.music-orbit');
+ if(!control)return;
+ const active=control.classList.toggle('is-playing');
+ control.setAttribute('aria-pressed',String(active));
+ const hint=control.closest('.bottom-experience').querySelector('.music-orbit-hint');
+ hint.textContent=active?'Pronto: seu próximo passo pode começar com uma conversa.':'Toque na ilustração e deixe a música entrar na conversa.';
+});
+</script>
+
 </body>
 </html>

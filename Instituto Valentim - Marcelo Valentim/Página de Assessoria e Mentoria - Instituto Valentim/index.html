@@ -295,6 +295,29 @@
 @media(prefers-reduced-motion:reduce){.music-orbit,.orbit-ring,.orbit-core,.orbit-note,.bottom-actions .button{transition:none}}
 </style>
 
+<style id="rolagem-perfis-mobile-estavel">
+/* Mantém a faixa de perfis em movimento contínuo também em navegadores móveis. */
+@media (max-width: 600px) {
+  .artist-strip { display: block !important; visibility: visible !important; }
+  .artist-strip-viewport { display: block !important; overflow: hidden !important; overflow-x: hidden !important; }
+  .artist-track {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    animation: artist-scroll-left 90s linear infinite !important;
+    animation-play-state: running !important;
+    -webkit-animation: artist-scroll-left 90s linear infinite !important;
+    -webkit-animation-play-state: running !important;
+    will-change: transform;
+  }
+  .artist-group { display: flex !important; flex: 0 0 auto !important; }
+  .artist-profile { display: block !important; flex: 0 0 58px !important; width: 58px !important; height: 58px !important; }
+}
+/* Respeita a preferência do sistema por movimento reduzido. */
+@media (prefers-reduced-motion: reduce) {
+  .artist-track { animation: none !important; -webkit-animation: none !important; transform: none !important; }
+}
+</style>
 </head>
 <body>
 <div class="top">
